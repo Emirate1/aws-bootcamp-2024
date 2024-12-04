@@ -1,4 +1,17 @@
-
+tasks:  
+  - name: aws-cli
+    env:
+      AWS_CLI_AUTO_PROMPT: on-partial
+    init: |
+      cd /workspace
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+      cd $THEIA_WORKSPACE_ROOT
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
+
+export AWS_ACCESS_KEY_ID="AKIAZDZTB7RKXVVBBDB3"
+export AWS_SECRET_ACCESS_KEY="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"
+export AWS_DEFAULT_REGION="us-east-1"
